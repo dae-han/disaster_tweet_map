@@ -63,6 +63,8 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 rows. The size of the data is  big enough to build model. As there will be more tweets that are not related to disasters than the ones that are related to disasters, the class ratio of 3 to 7 is a good starting point.
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png "distribution of classes in training data")
+
 #### Modeling Goals and Exploration
 
 In order to classify tweets as relevant, we aimed to minimize false negatives (type II error) and worked to maximize our sensitivity score. False negative values occur when a tweet that is about a disaster is classified as being irrelevant and we did not want to miss any tweets that might matter.
@@ -72,23 +74,41 @@ In order to classify tweets as relevant, we aimed to minimize false negatives (t
 * Logistic Regression ( TF-IDF Vectorizer )
 Winds, canyon and acres are among the most important words in classifying disaster related tweets. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png "most common words")
+
 * Random Forest ( TF-IDF Vectorizer )
 Acres, canyon and winds are among the most important words in classifying disaster related tweets using Random Forest. The disaster type of the scraped data is restrained to 'wild fire'. Considering how wide the fire is expanding is an important indicator in this model.
 
-* Multinomial Naive Bayes ( Count Vectorizer )
-Out of the models we tried the Naive Bayes model had the highest sensitivity score and also the best accuracy score . This  is the model we used to make relevant predictions on the unlabeled tweets.
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/random-forest-important-words.png "random forest important words")
 
+* Multinomial Naive Bayes ( Count Vectorizer )
+Out of the models we tried the Naive Bayes model had the highest sensitivity score and also the best accuracy score. This is the model we used to make relevant predictions on the unlabeled tweets.
 
 #### Evaluating the Models
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Model_scores.png "summary of models")
 
+We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
 
+#### ROC Scores
 
+**Logistic Regression**
+
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
+
+**Random Forest**
+
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
+
+**Naive Bayes**
+
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
 #### Flask Application
 
 We applied the relevant tweet classification model to the geographic tweets and then built an app using Flask that lets a user search by city and then plots the relevant tweets as points on a Google Maps basemap where you can then click on a point and see the tweet.
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/flask-map-image.png "flask map image")
 
 ### Conclusions
 ---
