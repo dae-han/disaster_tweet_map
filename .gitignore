@@ -1,0 +1,13 @@
+# only ignore what's in the base repo
+.ipynb_checkpoints
+.DS_Store
+
+# ignore a specific file
+**/creds.json
+
+# ignore a specific file extension
+**/*.json
+
+# ignore a directory name anywhere in the repo
+**/.ipynb_checkpoints
+**/.DS_Store

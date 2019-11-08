@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            {{"decoupled-map"|googlemap_js(34.047863, -118.240276, markers=[(34.047863, -118.240276)])}}
+            {{sndmap.js}}
+        <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+        <title>Map with Tweets</title>
+
+        <style type="text/css">
+            h1 {
+                background-color: #97cae0;
+                text-align: center;
+                font-family: 'Francois One', sans-serif;
+            }
+            body {
+                background-color: #ccdae9;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='107' height='107' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='93' height='93' fill-opacity='0.53' fill='%23ffffff'/%3E%3C/svg%3E");
+            }
+        </style>
+
+    </head>
+    <body>
+        <img src="https://spatialnetworks.com/assets/img/partners/new-light-technologies-logo.jpg" alt="spatial networks logo" width="330" height="100">
+        <h1>Explore the map to see what disasters people are reporting!</h1>
+        <div id="map-area">
+           {{sndmap.html}} 
+        </div>
+        
+    </body>
+</html>
