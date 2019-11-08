@@ -1,5 +1,4 @@
 # Mapping Relevant Fire Tweets in Southern California
----
 
 #### Authors
 Sophia Alice: [Linkedin](https://www.linkedin.com/in/sophia-alice/)           
