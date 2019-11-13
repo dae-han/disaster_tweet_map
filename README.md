@@ -7,16 +7,14 @@ Sonam Thakkar: [Linkedin](https://www.linkedin.com/in/sonamthakkar5/)
 
 
 ## Problem Statement
----
 
 We used tweets scraped from Twitter in order to create a classification model that filters out tweets in an area that are related to a fire. This model can then be applied to tweets containing geographic information so that a user could visit a website, type in their location, and see if anyone in their area is reporting a fire and, if so, can read tweets that contain vital information about the location of the fire, evacuation routes, and any news updates.
 
-### Scraping from Twitter
+## Scraping from Twitter
 
----
 In order to obtain tweets from Twitter, we tried three different Python API wrappers for the Twitter API: Tweepy, GetOldTweets3, and Python-Twitter. We first created a developer account with Twitter to receive an API key so we could access the data. The Twitter API restricts access to only tweets from the previous 7 days and sets a rate limit so that you can only access so many tweets per hour.
 
-#### Tweepy
+### - Tweepy
 
 We first built a Twitter scraper in Python using Tweepy using different keywords related to the then current fires in California and set the radius to capture every tweet within different radii of the city. But we quickly ran into issues with Tweepy because of the way the streaming method is structured. It created a continuous connection with Twitter and even after applying the relevant alterations, our scraper would hit the rate limit and time out before completing a scrape almost every time. In addition, out of the handufl of tweets the scrape did return none of them contained any geographic information: no latitude or longitude values, no user location information, no city names. Since Tweepy was not providing any tweets with geographic information, we abandoned this as a source of data and switched to using a different scraper.
 
