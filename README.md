@@ -76,6 +76,13 @@ Winds, canyon and acres are among the most important words in classifying disast
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
 
+With a sign of slight overfit, the accuracy score for logistic regression model was in the range of 0.83-0.88. However, sensitivity score for this model was 0.62. This shows high rate of type II error. For our aim was to minimize this error, this model was not the best for this project.             
+
+To improve this model, 
+- try different reguralization using L1, L2, elastic net penalty options and C value
+- additional NLP
+- try adding words that have low coefficients to stopword list
+
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
 
 * Random Forest ( TF-IDF Vectorizer )                             
