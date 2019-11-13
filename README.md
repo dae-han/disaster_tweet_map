@@ -63,7 +63,7 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 rows. The size of the data is  big enough to build model. As there will be more tweets that are not related to disasters than the ones that are related to disasters, the class ratio of 3 to 7 is a good starting point.
 
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png "distribution of classes in training data")
+<img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="300"/>
 
 #### Modeling Goals and Exploration
 
