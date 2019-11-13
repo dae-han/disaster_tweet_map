@@ -47,7 +47,7 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 ## Exploratory Data Analysis and Modeling
 
-#### Target Class Balance:
+#### Target Class Balance
 
 **Values in the label column:**
 0 represents irrelevant tweets
@@ -58,7 +58,7 @@ Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 row
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="500"/>
 
-#### Metrics:
+#### Metrics
 
 In order to classify tweets as relevant, we aimed to minimize false negatives (type II error) and worked to maximize our sensitivity score. False negative values occur when a tweet that is about a disaster is classified as being irrelevant and we did not want to miss any tweets that might matter.
 
@@ -74,7 +74,7 @@ With a sign of slight overfit, the accuracy score for logistic regression model 
 To improve this model, 
     - try different reguralization using L1, L2, elastic net penalty options and C value
     - additional NLP
-    - try adding words that have low coefficients to stopword list
+    - try adding words that have low coefficients to stopwords list
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
 
@@ -112,7 +112,7 @@ To improve this model,
 | Specificity      | 0.95              | 0.98        | 0.82                  |
 | ROC AUC score    | 0.96               | 0.87         | 0.98                  |
 
-We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
+We chose the **Naive Bayes model with a CountVectorizer** since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
 
 ## Flask Application
 
