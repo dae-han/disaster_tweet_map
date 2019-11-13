@@ -14,7 +14,7 @@ We used tweets scraped from Twitter in order to create a classification model th
 
 In order to obtain tweets from Twitter, we tried three different Python API wrappers for the Twitter API: Tweepy, GetOldTweets3, and Python-Twitter. We first created a developer account with Twitter to receive an API key so we could access the data. The Twitter API restricts access to only tweets from the previous 7 days and sets a rate limit so that you can only access so many tweets per hour.
 
-### - Tweepy
+#### Tweepy
 
 We first built a Twitter scraper in Python using Tweepy using different keywords related to the then current fires in California and set the radius to capture every tweet within different radii of the city. But we quickly ran into issues with Tweepy because of the way the streaming method is structured. It created a continuous connection with Twitter and even after applying the relevant alterations, our scraper would hit the rate limit and time out before completing a scrape almost every time. In addition, out of the handufl of tweets the scrape did return none of them contained any geographic information: no latitude or longitude values, no user location information, no city names. Since Tweepy was not providing any tweets with geographic information, we abandoned this as a source of data and switched to using a different scraper.
 
@@ -30,8 +30,7 @@ After the two previous wrappers we then tried the Python-Twitter wrapper. This w
 
 In order to add more tweets with geographic information to our dataset, we looked at past projects to see if any previous groups were succesful in obtaining tweets with geographic information. Out of all the past projects, only the [project from Chris Sinatra's group](https://github.com/csinatra/Twitter-Disaster-Repo) contained any data with geographic information. We augmented our dataset of tweets containing geographic information with their data.
 
-### Data Dictionary
----
+## Data Dictionary
 
 | Feature       | Data type | Description                                              |  
 |---------------|-----------|----------------------------------------------------------|  
@@ -46,8 +45,7 @@ In order to add more tweets with geographic information to our dataset, we looke
 | location      | string    | Location from where the user has tweeted                 |  
 
 
-### Exploratory Data Analysis and Modeling
----
+## Exploratory Data Analysis and Modeling
 
 #### Target Class Balance:
 
@@ -60,13 +58,13 @@ Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 row
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="500"/>
 
-#### Modeling Goals and Exploration
+#### Metrics:
 
 In order to classify tweets as relevant, we aimed to minimize false negatives (type II error) and worked to maximize our sensitivity score. False negative values occur when a tweet that is about a disaster is classified as being irrelevant and we did not want to miss any tweets that might matter.
 
-**Models:**
+#### Models
 
-* Logistic Regression ( TF-IDF Vectorizer )                             
+**1. Logistic Regression ( TF-IDF Vectorizer )**                             
 Winds, canyon and acres are among the most important words in classifying disaster related tweets using Logistic Regression model. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
@@ -80,7 +78,7 @@ To improve this model,
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
 
-* Random Forest ( TF-IDF Vectorizer )                             
+**2. Random Forest ( TF-IDF Vectorizer )**                             
 Acres, canyon and winds are among the most important words in classifying disaster related tweets using Random Forest. The disaster type of the scraped data is restrained to 'wild fire'. Considering how wide the fire is expanding is an important indicator in this model.
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/random-forest-important-words.png" width="500"/>
@@ -94,7 +92,7 @@ To improve this model,
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
 
-* Multinomial Naive Bayes ( Count Vectorizer )                             
+**3. Multinomial Naive Bayes ( Count Vectorizer )**                             
 Naive Bayes model had 0.94 accuracy score for train set. As the accuracy score for test set and validation set remained at 0.84 and 0.82, respectively, the model is overfitting. However, this model scores the higest on sensitivity score, which makes it an ideal model for this project.
 
 To improve this model,
@@ -116,15 +114,14 @@ To improve this model,
 
 We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
 
-#### Flask Application
+## Flask Application
 
 We applied the relevant tweet classification model to the geographic tweets and then built an app using Flask that lets a user search by city and then plots the relevant tweets as points on a Google Maps basemap where you can then click on a point and see the tweet.
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/flask-map-image.png "flask map image")
 
 
-### Recommendations and Suggestions for Further Improvements
----
+## Recommendations and Suggestions for Further Improvements
 
 #### Data Collection
 
