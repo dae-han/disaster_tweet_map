@@ -74,7 +74,7 @@ With a sign of slight overfit, the accuracy score for logistic regression model 
 
 To improve this model, 
 - try different reguralization using L1, L2, elastic net penalty options and C value
-- additional NLP
+- try different lemmatization and stemming to reduce the percentage of unseen word in the test set.
 - try adding words that have low coefficients to stopwords list
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
@@ -98,7 +98,7 @@ Naive Bayes model had 0.94 accuracy score for train set. As the accuracy score f
 
 To improve this model,
 - try checking out the percentage of unseen words in the test dataset.
-- try different lemmatization and stemming to reduce the percentage of unseen word.
+- try different lemmatization and stemming to reduce the percentage of unseen word in the test set.
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
