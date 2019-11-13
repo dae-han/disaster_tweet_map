@@ -121,7 +121,7 @@ We applied the relevant tweet classification model to the geographic tweets and 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/flask-map-image.png "flask map image")
 
 
-## Recommendations and Suggestions for Further Improvements
+## Next Steps
 
 #### Data Collection
 
