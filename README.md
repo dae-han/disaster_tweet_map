@@ -71,21 +71,21 @@ In order to classify tweets as relevant, we aimed to minimize false negatives (t
 
 **Models Tested:**
 
-* Logistic Regression ( TF-IDF Vectorizer )
-Winds, canyon and acres are among the most important words in classifying disaster related tweets. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
+* Logistic Regression ( TF-IDF Vectorizer )                             
+Winds, canyon and acres are among the most important words in classifying disaster related tweets using Logistic Regression model. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
 
-* Random Forest ( TF-IDF Vectorizer )
+* Random Forest ( TF-IDF Vectorizer )                             
 Acres, canyon and winds are among the most important words in classifying disaster related tweets using Random Forest. The disaster type of the scraped data is restrained to 'wild fire'. Considering how wide the fire is expanding is an important indicator in this model.
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/random-forest-important-words.png" width="500"/>
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
 
-* Multinomial Naive Bayes ( Count Vectorizer )
+* Multinomial Naive Bayes ( Count Vectorizer )                             
 Out of the models we tried the Naive Bayes model had the highest sensitivity score and also the best accuracy score. This is the model we used to make relevant predictions on the unlabeled tweets.
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
