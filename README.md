@@ -63,7 +63,7 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 rows. The size of the data is  big enough to build model. As there will be more tweets that are not related to disasters than the ones that are related to disasters, the class ratio of 3 to 7 is a good starting point.
 
-<img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="300"/>
+<img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="500"/>
 
 #### Modeling Goals and Exploration
 
@@ -74,7 +74,7 @@ In order to classify tweets as relevant, we aimed to minimize false negatives (t
 * Logistic Regression ( TF-IDF Vectorizer )
 Winds, canyon and acres are among the most important words in classifying disaster related tweets. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
 
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png "most common words")
+<img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
 
 * Random Forest ( TF-IDF Vectorizer )
 Acres, canyon and winds are among the most important words in classifying disaster related tweets using Random Forest. The disaster type of the scraped data is restrained to 'wild fire'. Considering how wide the fire is expanding is an important indicator in this model.
