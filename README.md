@@ -14,19 +14,19 @@ We used tweets scraped from Twitter in order to create a classification model th
 
 In order to obtain tweets from Twitter, we tried three different Python API wrappers for the Twitter API: Tweepy, GetOldTweets3, and Python-Twitter. We first created a developer account with Twitter to receive an API key so we could access the data. The Twitter API restricts access to only tweets from the previous 7 days and sets a rate limit so that you can only access so many tweets per hour.
 
-#### Tweepy
+### Tweepy
 
 We first built a Twitter scraper in Python using Tweepy using different keywords related to the then current fires in California and set the radius to capture every tweet within different radii of the city. But we quickly ran into issues with Tweepy because of the way the streaming method is structured. It created a continuous connection with Twitter and even after applying the relevant alterations, our scraper would hit the rate limit and time out before completing a scrape almost every time. In addition, out of the handufl of tweets the scrape did return none of them contained any geographic information: no latitude or longitude values, no user location information, no city names. Since Tweepy was not providing any tweets with geographic information, we abandoned this as a source of data and switched to using a different scraper.
 
-#### GetOldTweets3
+### GetOldTweets3
 
 After Tweepy, we then used GetOldTweets3 to build a dataset of tweets. GetOldTweets3 does not interface with the Twitter API because it instead interfaces with a databse of tweets that have previously been scraped from Twitter. Because it is not connected to the Twitter API, there were no issues with hitting the rate limit like we had using Tweepy and we also could access tweets that were more than 7 days old. Using GetOldTweets3, we were able to create a dataset of about 21,000 tweets, but these tweets, like the ones we received from the Tweepy scrape, lacked geographic data. These tweets unfortunately could also not be mapped.
 
-#### Python-Twitter
+### Python-Twitter
 
 After the two previous wrappers we then tried the Python-Twitter wrapper. This wrapper allowed us to filter tweets by keyword and also a geographic area as small as a circle with a radius of 1 km. It unfortunately also interfaced with the Twitter API so we again faced issues with rate limiting, but we were able to complete our scrapes and return data with geographic data using this wrapper. We looked at the Getty and Maria fires and created a grid of 225 points (15 km x 15 km) centered around each fire where each point was 1 km apart to grab any tweets from around the area of the fire with geographic information. Using this wrapper we were finally able to scrape tweets with geographic information! Unfortunately, there weren't too many of them. According to Twitter, [only 1-2% of tweets contain geographic information](https://developer.twitter.com/en/docs/tutorials/tweet-geo-metadata) and our final dataset of tweets containing geographic information only had 91 tweets.
 
-#### Data from a Past Project
+### Data from a Past Project
 
 In order to add more tweets with geographic information to our dataset, we looked at past projects to see if any previous groups were succesful in obtaining tweets with geographic information. Out of all the past projects, only the [project from Chris Sinatra's group](https://github.com/csinatra/Twitter-Disaster-Repo) contained any data with geographic information. We augmented our dataset of tweets containing geographic information with their data.
 
@@ -49,12 +49,13 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 ### Target Class Balance
 
-**Values in the label column:**
+```
 0 represents irrelevant tweets
 1 represents relevant tweets
 2 represents may be relevant or may not be relevant (ambiguous tweets)
+```
 
-Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 rows. The size of the data is  big enough to build model. As there will be more tweets that are not related to disasters than the ones that are related to disasters, the class ratio of 3 to 7 is a good starting point.
+Class 0 and 1 ratio of 7 to 3 was selected. This ratio is to reflect the real life where tweets discussing a disaster comprise of small portion of the total tweets. Varying the target class ratio to observe its impact on the model's performance is recommended. However, this was not covered in the scope of this project.
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="500"/>
 
