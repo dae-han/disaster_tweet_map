@@ -86,7 +86,14 @@ Out of the models we tried the Naive Bayes model had the highest sensitivity sco
 
 #### Evaluating the Models
 
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Model_scores.png "summary of models")
+|                  |Logistic Regression/TF-IDF  | Random Forest/TF-IDF  | Multinomial Naive Bayes/CVEC  |
+|------------------|---------------------|---------------|-------------------------|
+| Training score   | 0.88              | 0.77        | 0.94                  |
+| Testing score    | 0.86              | 0.76        | 0.84                |
+| CV score         | 0.83              | 0.76        | 0.82                  |
+| Sensitivity      | 0.62              | 0.22        | 0.90                  |
+| Specificity      | 0.95              | 0.98        | 0.82                  |
+| ROC AUC score    | 0.96               | 0.87         | 0.97                  |
 
 We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
 
