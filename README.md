@@ -93,7 +93,7 @@ Out of the models we tried the Naive Bayes model had the highest sensitivity sco
 | CV score         | 0.83              | 0.76        | 0.82                  |
 | Sensitivity      | 0.62              | 0.22        | 0.90                  |
 | Specificity      | 0.95              | 0.98        | 0.82                  |
-| ROC AUC score    | 0.96               | 0.87         | 0.97                  |
+| ROC AUC score    | 0.96               | 0.87         | 0.98                  |
 
 We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
 
