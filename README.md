@@ -76,7 +76,7 @@ Winds, canyon and acres are among the most important words in classifying disast
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
 
-With a sign of slight overfit, the accuracy score for logistic regression model was in the range of 0.83-0.88. However, sensitivity score for this model was 0.62. This shows high rate of type II error. For our aim was to minimize this error, this model was not the best for this project.             
+With a sign of slight overfit, the accuracy score for logistic regression model was in the range of 0.83-0.88. However, sensitivity score for this model was 0.62. This shows high rate of type II error. For our aim was to minimize this error type, this model was not the best for this project.             
 
 To improve this model, 
 - try different reguralization using L1, L2, elastic net penalty options and C value
@@ -90,10 +90,21 @@ Acres, canyon and winds are among the most important words in classifying disast
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/random-forest-important-words.png" width="500"/>
 
+The accuracy score for Random Forest model remained in the range of 0.76 - 0.77. Furthermore, the sensitivity score for this model was 0.22, which indicates high rate of type II errors. 
+
+To improve this model,
+- try emsemble, bagging and boosting model
+- try changing target class ratio
+- try doing more thorough hyperparameter tuning.
+
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
 
 * Multinomial Naive Bayes ( Count Vectorizer )                             
-Out of the models we tried the Naive Bayes model had the highest sensitivity score and also the best accuracy score. This is the model we used to make relevant predictions on the unlabeled tweets.
+Naive Bayes model had 0.94 accuracy score for train set. As the accuracy score for test set and validation set remained at 0.84 and 0.82, respectively, the model is overfitting. However, this model scores the higest on sensitivity score, which makes it an ideal model for this project.
+
+To improve this model,
+- try checking out the percentage of unseen words in the test dataset.
+- try different lemmatization and stemming to reduce the percentage of unseen word.
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
