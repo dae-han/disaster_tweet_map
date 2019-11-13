@@ -47,7 +47,7 @@ In order to add more tweets with geographic information to our dataset, we looke
 
 ## Exploratory Data Analysis and Modeling
 
-#### Target Class Balance
+### Target Class Balance
 
 **Values in the label column:**
 0 represents irrelevant tweets
@@ -58,11 +58,11 @@ Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 row
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Value_counts_label_column.png" width="500"/>
 
-#### Metrics
+### Metrics
 
 In order to classify tweets as relevant, we aimed to minimize false negatives (type II error) and worked to maximize our sensitivity score. False negative values occur when a tweet that is about a disaster is classified as being irrelevant and we did not want to miss any tweets that might matter.
 
-#### Models
+### Models
 
 **1. Logistic Regression ( TF-IDF Vectorizer )**                             
 Winds, canyon and acres are among the most important words in classifying disaster related tweets using Logistic Regression model. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
@@ -101,7 +101,7 @@ To improve this model,
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
-#### Evaluating the Models
+### Evaluation
 
 |                  |Logistic Regression/TF-IDF  | Random Forest/TF-IDF  | Multinomial Naive Bayes/CVEC  |
 |------------------|---------------------|---------------|-------------------------|
