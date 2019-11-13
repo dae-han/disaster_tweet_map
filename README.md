@@ -11,10 +11,8 @@ Sonam Thakkar: [Linkedin](https://www.linkedin.com/in/sonamthakkar5/)
 
 We used tweets scraped from Twitter in order to create a classification model that filters out tweets in an area that are related to a fire. This model can then be applied to tweets containing geographic information so that a user could visit a website, type in their location, and see if anyone in their area is reporting a fire and, if so, can read tweets that contain vital information about the location of the fire, evacuation routes, and any news updates.
 
-### Background Information
----
-
 ### The Data
+---
 #### Scraping from Twitter
 
 In order to obtain tweets from Twitter, we tried three different Python API wrappers for the Twitter API: Tweepy, GetOldTweets3, and Python-Twitter. We first created a developer account with Twitter to receive an API key so we could access the data. The Twitter API restricts access to only tweets from the previous 7 days and sets a rate limit so that you can only access so many tweets per hour.
@@ -69,7 +67,7 @@ Class 1 and 2 are about 3 to 7 ratio and the two classes are a total of 2644 row
 
 In order to classify tweets as relevant, we aimed to minimize false negatives (type II error) and worked to maximize our sensitivity score. False negative values occur when a tweet that is about a disaster is classified as being irrelevant and we did not want to miss any tweets that might matter.
 
-**Models Tested:**
+**Models:**
 
 * Logistic Regression ( TF-IDF Vectorizer )                             
 Winds, canyon and acres are among the most important words in classifying disaster related tweets using Logistic Regression model. The disaster type of the scraped data is restrained to 'wild fire'. Considering winds are important indicator in understanding where the fire is spreading towards and how fast the fire is spreading
@@ -127,12 +125,9 @@ We applied the relevant tweet classification model to the geographic tweets and 
 
 ![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/flask-map-image.png "flask map image")
 
-### Conclusions
----
-
-
 
 ### Recommendations and Suggestions for Further Improvements
+---
 
 #### Data Collection
 
