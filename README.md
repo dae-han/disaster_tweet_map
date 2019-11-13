@@ -76,13 +76,19 @@ Winds, canyon and acres are among the most important words in classifying disast
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_word_count.png" width="500"/>
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
+
 * Random Forest ( TF-IDF Vectorizer )
 Acres, canyon and winds are among the most important words in classifying disaster related tweets using Random Forest. The disaster type of the scraped data is restrained to 'wild fire'. Considering how wide the fire is expanding is an important indicator in this model.
 
 <img src = "https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/random-forest-important-words.png" width="500"/>
 
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
+
 * Multinomial Naive Bayes ( Count Vectorizer )
 Out of the models we tried the Naive Bayes model had the highest sensitivity score and also the best accuracy score. This is the model we used to make relevant predictions on the unlabeled tweets.
+
+![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
 #### Evaluating the Models
 
@@ -96,20 +102,6 @@ Out of the models we tried the Naive Bayes model had the highest sensitivity sco
 | ROC AUC score    | 0.96               | 0.87         | 0.98                  |
 
 We chose the Naive Bayes model with a CountVectorizer since it had the highest sensitivity score compared to the other two models and also had high (although overfit) training and testing accuracy scores. 
-
-#### ROC Scores
-
-**Logistic Regression**
-
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Logistic_regression_roc_auc_curve.png "logistic regression roc curve")
-
-**Random Forest**
-
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Random_forest_roc_auc_curve.png "random forest roc curve")
-
-**Naive Bayes**
-
-![alt text](https://github.com/dae-han/disaster_tweet_map/blob/master/graphs/Multinomial_nb_roc_auc%20curve.png "naive bayes roc curve")
 
 #### Flask Application
 
