@@ -6,15 +6,14 @@ Dae Han: [Linkedin](https://www.linkedin.com/in/daehuihan/)
 Sonam Thakkar: [Linkedin](https://www.linkedin.com/in/sonamthakkar5/)
 
 
-### Problem Statement
+## Problem Statement
 ---
 
 We used tweets scraped from Twitter in order to create a classification model that filters out tweets in an area that are related to a fire. This model can then be applied to tweets containing geographic information so that a user could visit a website, type in their location, and see if anyone in their area is reporting a fire and, if so, can read tweets that contain vital information about the location of the fire, evacuation routes, and any news updates.
 
-### The Data
----
-#### Scraping from Twitter
+### Scraping from Twitter
 
+---
 In order to obtain tweets from Twitter, we tried three different Python API wrappers for the Twitter API: Tweepy, GetOldTweets3, and Python-Twitter. We first created a developer account with Twitter to receive an API key so we could access the data. The Twitter API restricts access to only tweets from the previous 7 days and sets a rate limit so that you can only access so many tweets per hour.
 
 #### Tweepy
